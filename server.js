@@ -24,7 +24,18 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
+//get request for image
+app.get('/api/imagesearch/:searchVal*', function(req,res,next){
+var searchVal = req.params.searchVal;
+var offset = req.query.offset;
 
+  return res.json({
+  searchVal,
+  offset
+  });
+  
+  
+});
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
