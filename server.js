@@ -35,6 +35,18 @@ app.get("/", (request, response) => {
 app.get('/api/imagesearch/:searchVal*', function(req,res,next){
 var searchVal = req.params.searchVal;
 var offset = req.query.offset;
+  
+  
+var data = new searchTerm({
+  searchVal,
+  searchDate: new Date()  
+});  
+  
+  data.save(function(err){
+  
+  
+  
+  })
 
   return res.json({
   searchVal,
