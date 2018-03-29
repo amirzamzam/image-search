@@ -4,6 +4,7 @@ dependencies:
   express: 4.16.3
   mongoose: 5.0.12
   node-bing-api: 3.2.2
+  qwant-api: 0.3.0
 packages:
   /accepts/1.3.5:
     dependencies:
@@ -615,6 +616,12 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-eRzhrN1WSINYCDCbrz796z37LOe3m5tmW7RQf6oBntukAG1nmovJvhnwHHRMAfeoItc1m2Hk02WER2aQ/iqs+A==
+  /qwant-api/0.3.0:
+    dependencies:
+      request: 2.85.0
+    dev: false
+    resolution:
+      integrity: sha512-GqEjRB56UjHHjaTxfumT0e5hjUpWT+QRAFufAvVpNCIkM4q5PT5wzHkJqET0gAC1DcGjPfNQiVApczH6Y6vgpg==
   /range-parser/1.2.0:
     dev: false
     engines:
@@ -846,3 +853,4 @@ specifiers:
   express: ^4.16.3
   mongoose: ^5.0.12
   node-bing-api: ^3.2.2
+  qwant-api: ^0.3.0

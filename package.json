@@ -13,7 +13,8 @@
     "mongoose": "^5.0.12",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "node-bing-api": "^3.2.2"
+    "node-bing-api": "^3.2.2",
+    "qwant-api": "^0.3.0"
   },
   "engines": {
     "node": "9.x"

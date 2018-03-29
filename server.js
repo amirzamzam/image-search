@@ -7,7 +7,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const searchTerm = require('./models/searchTerm');
-const Bing = require('node-bing-api')({accKey:"547f17cf520b4edd89ab9f175b63732e"});
+const qwant = require('qwant-api');
+// const Bing = require('node-bing-api')({accKey:"547f17cf520b4edd89ab9f175b63732e"});
 const app = express();
 
 app.use(cors());
@@ -54,13 +55,21 @@ var data = new searchTerm({
   
   });
   
-  Bing.images(searchVal, {
-                top:10
-  }, function(error,rez,body){
+  qwant.search("web", { query: "test", count: 10, offset: 1, language: "german" }, function(err, data){
+    if (err) return console.log(err);
+    console.log(data);
+});
+  
+  
+  
+  
+//   Bing.images(searchVal, {
+//                 top:10
+//   }, function(error,rez,body){
     
-    console.log(body);
+//     console.log(body);
     
-  });
+//   });
   
 });
 
