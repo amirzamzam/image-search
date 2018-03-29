@@ -3,10 +3,13 @@
 
 // init project
 const express = require('express')
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const app = express()
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
+app.use(cors());
+app.use(bodyParser.json());
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'))
@@ -16,22 +19,7 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
-// Simple in-memory store
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-]
 
-app.get("/dreams", (request, response) => {
-  response.send(dreams)
-})
-
-// could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
-app.post("/dreams", (request, response) => {
-  dreams.push(request.query.dream)
-  response.sendStatus(200)
-})
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
