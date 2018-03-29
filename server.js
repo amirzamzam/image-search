@@ -18,7 +18,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-mongoose.connect('mongodb://amir:<dbpassword>@ds019836.mlab.com:19836/image-search');
+mongoose.connect('mongodb://amir:1234@ds019836.mlab.com:19836/image-search').then(
+  () => { console.log("Connected"); },
+  err => { console.log("Error connecting");}
+);;
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'))
