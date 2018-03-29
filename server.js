@@ -53,12 +53,25 @@ var data = new searchTerm({
     res.json(data);
   
   });
-
-//   return res.json({
-//   searchVal,
-//   offset
-//   });
   
+  Bing.images(searchVal, {
+                top:10
+  }, function(error,rez,body){
+  var bingData = [];
+    
+    for(var i = 0; i<10; i++){
+    bingData.push({
+        url: body.value[i].webSearchUrl,
+        snippet: body.value[i].name,
+        thumbnail: body.value[i].thumbnailUrl,
+        context: body.value[i].hostPageDisplayUrl
+    });
+    
+    }
+    
+    res.json(bingData);
+    
+  });
   
 });
 
