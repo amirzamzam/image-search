@@ -58,7 +58,7 @@ var data = new searchTerm({
                 top:10
   }, function(error,rez,body){
     
-    res.json(body);
+    console.log(body);
     
   });
   
