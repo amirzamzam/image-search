@@ -6,6 +6,11 @@ const express = require('express')
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const Google = require('node-google-api')({
+    apiKey: 'AIzaSyDTF9Y0bkGKy_uUCZPIyqdit7wuLDI5KqQ'
+,
+    debugMode: true // Throws errors instead of passing them silently.
+});
 const app = express()
 
 app.use(cors());
