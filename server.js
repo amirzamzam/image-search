@@ -11,10 +11,14 @@ const Google = require('node-google-api')({
 ,
     debugMode: true // Throws errors instead of passing them silently.
 });
+const searchTerm = require('./models/searchTerm');
 const app = express()
 
 app.use(cors());
 app.use(bodyParser.json());
+
+
+mongoose.connect('mongodb://amir:<dbpassword>@ds019836.mlab.com:19836/image-search');
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'))
