@@ -46,14 +46,14 @@ var data = new searchTerm({
   if(err){
     return res.send('Error saving to database');
   }
-    res.json({works:'works'});
+    res.json(data);
   
   });
 
-  return res.json({
-  searchVal,
-  offset
-  });
+//   return res.json({
+//   searchVal,
+//   offset
+//   });
   
   
 });
