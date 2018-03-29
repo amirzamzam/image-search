@@ -43,10 +43,12 @@ var data = new searchTerm({
 });  
   
   data.save(function(err){
+  if(err){
+    return res.send('Error saving to database');
+  }
+    res.json({works:'works'});
   
-  
-  
-  })
+  });
 
   return res.json({
   searchVal,
