@@ -6,13 +6,9 @@ const express = require('express')
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const Google = require('node-google-api')({
-    apiKey: 'AIzaSyDTF9Y0bkGKy_uUCZPIyqdit7wuLDI5KqQ'
-,
-    debugMode: true // Throws errors instead of passing them silently.
-});
 const searchTerm = require('./models/searchTerm');
-const app = express()
+const Bing = require('node-bing-api')({accKey:'66348ddb4679479895bbbdd23afaaf1b'});
+const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
