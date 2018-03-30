@@ -60,16 +60,19 @@ var data = new searchTerm({
       
 //       for(var i = 0; i<10; i++){
 //       qwantData.push({
-//       url:, 
-//         snippet:,
-//         thumbnail:,
-//         context:
+//         url: data.result[i].items.media, 
+//         snippet:data.result[i].items.media,
+//         thumbnail:data.result[i].items.thumbnail,
+//         context:data.result[i].items.media
       
 //       });
+        
 //       }
       
       
-    res.json(data);
+//     res.json(qwantData);
+      
+      res.json(data);
   
   });
     
