@@ -56,13 +56,20 @@ var data = new searchTerm({
   });
 
   
-  Bing.images(searchVal, {
-                top:10
-  }, function(error,rez,body){
+//   Bing.images(searchVal, {
+//                 top:10
+//   }, function(error,rez,body){
     
-    console.log(body);
+//     console.log(body);
     
-  });
+//   });
+  
+  var qwant = require("qwant-api");
+ 
+  qwant.search("images", { query: searchVal, count: 10, offset: 0, language: "english" }, function(err, data){
+    if (err) return console.log(err);
+    console.log(data);
+});
   
 });
 
