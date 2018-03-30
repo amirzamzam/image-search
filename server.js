@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const searchTerm = require('./models/searchTerm');
 const qwant = require('qwant-api');
-const Bing = require('node-bing-api')({accKey:"320a32c539eb4f6b9a2a932c327ecf6a"});
+const Bing = require('node-bing-api')({accKey:"f777928cfac442a6b0f32abdf3909096"});
 const app = express();
 
 app.use(cors());
