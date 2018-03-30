@@ -53,7 +53,7 @@ var data = new searchTerm({
   }
     var qwant = require("qwant-api");
  
-    qwant.search("images", { query: searchVal, count: 10, offset: 0, language: "english" }, function(err, data){
+    qwant.search("images", { query: searchVal, count: 10, offset: offset, language: "english" }, function(err, data){
     if (err) return console.log(err);
       
     var qwantData = [];
