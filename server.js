@@ -51,24 +51,28 @@ var data = new searchTerm({
   if(err){
     return res.send('Error saving to database');
   }
+    var qwant = require("qwant-api");
+ 
+    qwant.search("images", { query: searchVal, count: 10, offset: 0, language: "english" }, function(err, data){
+    if (err) return console.log(err);
+      
+//     var qwantData = [];
+      
+//       for(var i = 0; i<10; i++){
+//       qwantData.push({
+//       url:, 
+//         snippet:,
+//         thumbnail:,
+//         context:
+      
+//       });
+//       }
+      
+      
     res.json(data);
   
   });
-
-  
-//   Bing.images(searchVal, {
-//                 top:10
-//   }, function(error,rez,body){
     
-//     console.log(body);
-    
-//   });
-  
-  var qwant = require("qwant-api");
- 
-  qwant.search("images", { query: searchVal, count: 10, offset: 0, language: "english" }, function(err, data){
-    if (err) return console.log(err);
-    console.log(data);
 });
   
 });
