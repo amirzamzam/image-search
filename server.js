@@ -58,19 +58,20 @@ var data = new searchTerm({
       
     var qwantData = [];
       
-      for(var i = 1; i<10; i++){
+      for(var i = 0; i<10; i++){
       qwantData.push({
-        url: data.result[i].items.media, 
-        snippet: data.result[i].items.title,
-        thumbnail: data.result[i].items.thumbnail,
-        context: data.result[i].items.media_fullsize
+        url: data.data.result.items[i].media, 
+        snippet: data.data.result.items[i].title,
+        thumbnail: data.data.result.items[i].thumbnail,
+        context: data.data.result.items[i].media_fullsize
       
       });
         
       }
       
     res.json(qwantData);
-
+      
+    
   });
     
 });
