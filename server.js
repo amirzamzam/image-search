@@ -56,24 +56,21 @@ var data = new searchTerm({
     qwant.search("images", { query: searchVal, count: 10, offset: 0, language: "english" }, function(err, data){
     if (err) return console.log(err);
       
-//     var qwantData = [];
+    var qwantData = [];
       
-//       for(var i = 0; i<10; i++){
-//       qwantData.push({
-//         url: data.result[i].items.media, 
-//         snippet:data.result[i].items.media,
-//         thumbnail:data.result[i].items.thumbnail,
-//         context:data.result[i].items.media
+      for(var i = 0; i<10; i++){
+      qwantData.push({
+        url: data.result.items[i].media, 
+        snippet: data.result.items[i].title,
+        thumbnail: data.result.items[i].thumbnail,
+        context: data.result.items[i].media_fullsize
       
-//       });
+      });
         
-//       }
+      }
       
-      
-//     res.json(qwantData);
-      
-      res.json(data);
-  
+    res.json(qwantData);
+
   });
     
 });
